@@ -1,0 +1,11 @@
+{
+    "name": "Test power GONK",
+    "description": "GONK GONK GONK GONK STONK",
+
+    "type": "origins:prevent_game_event",
+    "event": "minecraft:hit_ground",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "say gonk"
+    }
+}

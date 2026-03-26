@@ -1,0 +1,41 @@
+{
+  "type": "origins:multiple",
+
+  "shake":{
+    "type": "origins:shaking"
+  },
+
+	"shader":{
+		"type": "origins:shader",
+		"toggleable": false,
+		"shader": "minecraft:shaders/post/blur.json"
+	},
+
+  "overlay":{
+	"type": "origins:overlay",
+    "texture": "minecraft:test1",
+    "strength": 1.0,
+    "red": 1.0,
+    "green": 1.0,
+    "blue": 1.0,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false
+  },
+
+  "remove":{
+	"type": "action_over_time",
+	"interval": 100,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "power revoke @s force:slow_effects"
+			}
+		]
+	}
+
+  }
+}

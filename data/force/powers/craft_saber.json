@@ -1,0 +1,23 @@
+{
+    "type": "origins:multiple",
+
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "id": "origins:lightsaber",
+        "pattern": [
+            "A",
+            "R",
+            "I"
+        ],
+        "key": {
+            "A": "minecraft:amethyst_shard",
+            "R": "minecraft:redstone_dust",
+            "I": "minecraft:iron_ingot"
+        },
+        "result": {
+            "count": 1,
+            "item": "minecraft:birch_boat"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "origins:action_on_block_break",
+    "condition": {
+        "type": "origins:chance",
+        "chance": 0.5
+    },
+    "block_condition": {
+        "type": "origins:block",
+        "block": "minecraft:amethyst_cluster"
+    },
+
+    "block_action": {
+        "type": "origins:execute_command",
+        "command": "function force:kyber"
+    }
+}

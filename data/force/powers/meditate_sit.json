@@ -1,0 +1,10 @@
+{
+    "type": "origins:multiple",
+
+    "active_refill": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:mount"
+        }
+    }
+}

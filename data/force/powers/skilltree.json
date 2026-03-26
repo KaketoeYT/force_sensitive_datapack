@@ -1,0 +1,48 @@
+{
+    "name": "Skilltree",
+    "description": "Obtain your force powers by choosing them in the skilltree (Ability button on a campfire)",
+
+    "type": "origins:inventory",
+    "container_type":"generic_9x6",
+    "drop_on_death": false,
+    "title":"Skilltree",
+    "condition": {
+        "type":"origins:and",
+        "conditions": [
+            {
+                "type": "origins:raycast",
+                "distance": 6,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "block_condition": {
+                    "type": "origins:block",
+                    "block": "minecraft:campfire"
+                    }
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                        "type": "origins:empty"
+                }
+            }
+        ]
+    },
+
+    "entity_action": {
+    "type": "origins:execute_command",
+    "command": "say I hit a campfire"
+    },
+
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": true
+    },
+
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    }
+}

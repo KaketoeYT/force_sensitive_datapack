@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"force:skilltree",
+		"force:obtain_kyber",
+		"force:seed_skilltree",
+		"force:double_jump",
+		"force:force_bar",
+		"force:stamina_bar",
+		"force:targeting",
+		"force:force_powers",
+		"force:craft_saber"
+	],
+	"icon": {
+		"id": "minecraft:iron_sword"
+	},
+	"order": 9999999,
+	"impact": 3,
+	"name": "Force Sensitive",
+	"description": "PLEASE CHANGE"
+}

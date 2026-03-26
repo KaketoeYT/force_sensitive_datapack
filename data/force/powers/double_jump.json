@@ -1,0 +1,93 @@
+{
+    "type": "origins:multiple",
+    "doublejump":{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "set": true,
+                    "type": "origins:add_velocity",
+                    "space": "world",
+                    "y": 0.6
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command":"resource change @s force:force_bar_bar -100"
+                }
+            ]
+        },
+        "condition": {
+            "type":"origins:and",
+                "conditions": 
+                [
+                    {
+                        "type": "origins:on_block",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:lava",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "force:force_bar_bar",
+                        "comparison": ">",
+                        "compare_to": 100
+                    }
+                ]
+        },
+
+        "cooldown": 9999999,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.jump",
+            "continuous": false
+        }
+    },
+
+    "reset":{
+        "type": "origins:prevent_game_event",
+        "events": [
+            "minecraft:hit_ground",
+            "splash"
+        ],
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "resource set @s force:double_jump_doublejump 9999999"
+        }
+    },
+
+    "falldmg":{
+        "type": "origins:modify_damage_taken",
+        "modifiers": [
+            {
+                "name": "quen",
+                "operation": "set_total",
+                "amount": 0
+            }
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "force:double_jump_doublejump",
+            "comparison": ">",
+            "compare_to": 9999969
+        },
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:is_fall"
+        }
+    }
+
+    
+}

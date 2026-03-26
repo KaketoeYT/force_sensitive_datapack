@@ -1,9 +1,6 @@
 {
-  
-"pack": {
-    
-	"pack_format": 34,
-    
-	"description": "Lightsaber test"
+  "pack": {
+    "pack_format": 48,
+    "description": "Adds the Force Sensitive Origin. ~By WaterWalker023 & Kaketoe"
   }
 }

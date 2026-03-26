@@ -1,0 +1,28 @@
+{
+    "type": "origins:multiple",
+
+    "remove":{
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "resource change @s force:stamina_bar_bar -150"
+        }
+    },
+
+    "debuff_2":{
+        "type": "origins:modify_damage_dealt",
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition":{
+                "type": "origins:resource",
+                "resource": "force:stamina_bar_bar",
+                "comparison": "<",
+                "compare_to": 150
+            }
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "amount": -0.5
+        }
+    }
+}

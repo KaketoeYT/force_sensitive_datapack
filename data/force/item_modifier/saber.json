@@ -1,0 +1,7 @@
+{
+    "function": "apoli:add_power",
+    "power": "force:saber_toggle",
+    "slot": "mainhand",
+    "negative": false
+}
+
