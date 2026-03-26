@@ -1,0 +1,78 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "item/wooden_sword"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "custom_model_data": 1
+            },
+            "model": "blue_single_jaro_off"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 2
+            },
+            "model": "blue_single_jaro_on"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 3
+            },
+            "model": "red_single_jaro_off"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 4
+            },
+            "model": "red_single_jaro_on"
+        },
+
+        {
+            "predicate": {
+                "custom_model_data": 101
+            },
+            "model": "blue_dual_jaro_off"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 102
+            },
+            "model": "blue_dual_jaro_on"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 103
+            },
+            "model": "red_dual_jaro_off"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 104
+            },
+            "model": "red_dual_jaro_on"
+        },
+
+        {
+            "predicate": {
+                "custom_model_data": 203
+            },
+            "model": "red_dagger_jaro_off"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 204
+            },
+            "model": "red_dagger_jaro_on"
+        },
+
+        {
+            "predicate": {
+                "custom_model_data": 901
+            },
+            "model": "banished_models/mashup_anakin_saber_on"
+        }
+        
+    ]
+}
