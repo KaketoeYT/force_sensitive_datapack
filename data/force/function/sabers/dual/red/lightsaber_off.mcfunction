@@ -1,1 +1,0 @@
-item replace entity @s weapon.mainhand with minecraft:wooden_sword[minecraft:custom_model_data=104, minecraft:rarity=epic, minecraft:item_name='{"text":"Red Dual Lightsaber"}' , minecraft:unbreakable={}, apoli:powers=[{power: 'force:dual_saber_on_red_off', slot: 'mainhand'}]]

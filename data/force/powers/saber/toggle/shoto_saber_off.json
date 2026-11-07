@@ -1,24 +1,12 @@
 {
     "type": "origins:multiple",
-    "blue_on":{
-        "type": "origins:active_self",
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function force:sabers/shoto/blue/lightsaber_off"
-        },
 
-        "key": {
-        "key": "key.use",
-        "continuous": false
-        }
-    },
-
-    "red_on_offhand":{
+    "on_offhand":{
         "type": "origins:active_self",
 
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "function force:sabers/shoto/red/lightsaber_off_offhand"
+            "command": "function force:sabers/shoto/lightsaber_off_offhand"
         },
 
         "entity_condition": {
@@ -36,12 +24,12 @@
         }
     },
 
-    "red_on_mainhand":{
+    "on_mainhand":{
         "type": "origins:active_self",
 
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "function force:sabers/shoto/red/lightsaber_off_mainhand"
+            "command": "function force:sabers/shoto/lightsaber_off_mainhand"
         },
 
         "entity_condition": {

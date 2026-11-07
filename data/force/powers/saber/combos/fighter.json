@@ -13,46 +13,23 @@
     "fist_buff":{
         "type": "origins:modify_damage_dealt",
         "modifier": {
-            "operation": "set_base",
+            "operation": "add_base_early",
             "amount": 6
         }
     },
 
-    "per_attack":{
+    "first_attack": {
         "type": "origins:action_on_hit",
-        "bientity_action": {
-            "type": "origins:actor_action",
-            "action":{
-                "type": "origins:change_resource",
-                "resource": "force:saber_combos/fighter_bar",
-                "operation":"add",
-                "change": 1
-            }
-        },
         "bientity_condition": {
-            "type": "origins:actor_condition",
-            "condition": {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:empty"
-                }
-            }
-        }
-    },
-
-    "1_2_attack":{
-        "type":"origins:action_on_hit",
-        "bientity_condition": {
-            "type":"origins:and",
+            "type": "origins:and",
             "conditions": [
                 {
                     "type": "origins:actor_condition",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "force:saber_combos/fighter_bar",
-                        "comparison": "<",
-                        "compare_to": 2
+                        "resource": "force:saber/combos/fighter_bar",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 },
                 {
@@ -65,14 +42,26 @@
                         }
                     }
                 }
-            ] 
+            ]
         },
         "bientity_action": {
-            "type":"origins:and",
-            "actions":[
+            "type": "origins:and",
+            "actions": [
                 {
-                    "type": "origins:add_velocity",
-                    "z": 0.25
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "force:saber/combos/fighter_bar",
+                        "operation": "set",
+                        "change": 1
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:add_velocity",
+                        "z": 0.25
+                    }
                 },
                 {
                     "type": "origins:target_action",
@@ -81,19 +70,69 @@
                         "amount": 6.5,
                         "damage_type": "minecraft:player_attack"
                     }
+                }
+            ]
+        }
+    },
+
+    "second_attack": {
+        "type": "origins:action_on_hit",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/fighter_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
                 },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
                 {
                     "type": "origins:actor_action",
                     "action": {
-                        "type": "execute_command",
-                        "command": "say first or second attack"
+                        "type": "origins:change_resource",
+                        "resource": "force:saber/combos/fighter_bar",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:add_velocity",
+                        "z": 0.25
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:damage",
+                        "amount": 6.5,
+                        "damage_type": "minecraft:player_attack"
                     }
                 }
             ]
         }
     },
 
-    "3_attack":{
+    "third_attack":{
         "type": "origins:action_on_hit",
         "bientity_condition": {
             "type":"origins:and",
@@ -102,8 +141,8 @@
                     "type": "origins:actor_condition",
                     "condition": {
                         "type": "origins:resource",
-                        "resource": "force:saber_combos/fighter_bar",
-                        "comparison": ">=",
+                        "resource": "force:saber/combos/fighter_bar",
+                        "comparison": "==",
                         "compare_to": 2
                     }
                 },
@@ -126,7 +165,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:change_resource",
-                        "resource": "force:saber_combos/fighter_bar",
+                        "resource": "force:saber/combos/fighter_bar",
                         "operation":"set",
                         "change": 0
                     }
@@ -148,13 +187,6 @@
                             "type": "origins:swing_hand",
                             "hand": "OFF_HAND"
                         }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "execute_command",
-                        "command": "say third attack"
                     }
                 }
             ]
