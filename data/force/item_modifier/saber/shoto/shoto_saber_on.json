@@ -1,0 +1,30 @@
+[
+    {
+        "function": "minecraft:set_custom_data",
+        "tag": "{on:1b}"
+    },
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:custom_model_data": 204,
+            "minecraft:attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "type": "minecraft:generic.attack_damage",
+                        "id": "minecraft:base_attack_damage",
+                        "amount": 3,
+                        "operation": "add_value",
+                        "slot": "hand"
+                    },
+                    {
+                        "type": "minecraft:generic.attack_speed",
+                        "id": "minecraft:base_attack_speed",
+                        "amount": -2.4,
+                        "operation": "add_value",
+                        "slot": "hand"
+                    }
+                ]
+            }
+        }
+    }
+]

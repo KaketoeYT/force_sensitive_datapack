@@ -1,0 +1,30 @@
+[
+    {
+        "function": "minecraft:set_custom_data",
+        "tag": "{on:1b}"
+    },
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:custom_model_data": 4,
+            "minecraft:attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "type": "minecraft:generic.attack_damage",
+                        "id": "force:saber_on_damage",
+                        "amount": 7.5,
+                        "operation": "add_value",
+                        "slot": "hand"
+                    },
+                    {
+                        "type": "minecraft:generic.attack_speed",
+                        "id": "force:saber_on_speed",
+                        "amount": -2.5,
+                        "operation": "add_value",
+                        "slot": "hand"
+                    }
+                ]
+            }
+        }
+    }
+]

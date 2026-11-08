@@ -1,0 +1,44 @@
+{
+    "type": "apoli:multiple",
+
+    "remove": {
+        "type": "apoli:self_action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b}"
+            }
+        },
+        "entity_action": {
+            "type": "apoli:execute_command",
+            "command": "resource change @s force:stamina_bar_bar -200"
+        }
+    },
+
+    "debuff": {
+        "type": "apoli:modify_damage_dealt",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b}"
+            }
+        },
+        "bientity_condition": {
+            "type": "apoli:actor_condition",
+            "condition": {
+                "type": "apoli:resource",
+                "resource": "force:stamina_bar_bar",
+                "comparison": "<",
+                "compare_to": 200
+            }
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "amount": -0.5
+        }
+    }
+}

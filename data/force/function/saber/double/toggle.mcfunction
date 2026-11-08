@@ -1,0 +1,2 @@
+execute if items entity @s weapon.mainhand *[minecraft:custom_data~{on:0b}] run return run item modify entity @s weapon.mainhand force:saber/double/double_saber_on
+execute if items entity @s weapon.mainhand *[minecraft:custom_data~{on:1b}] run return run item modify entity @s weapon.mainhand force:saber/double/double_saber_off

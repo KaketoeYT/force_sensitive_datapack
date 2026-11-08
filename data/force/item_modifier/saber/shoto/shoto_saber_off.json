@@ -1,0 +1,23 @@
+[
+    {
+        "function": "minecraft:set_custom_data",
+        "tag": "{on:0b}"
+    },
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:custom_model_data": 203,
+            "minecraft:attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "type": "minecraft:generic.attack_damage",
+                        "id": "force:shoto_saber_off_damage",
+                        "amount": 0,
+                        "operation": "add_value",
+                        "slot": "hand"
+                    }
+                ]
+            }
+        }
+    }
+]

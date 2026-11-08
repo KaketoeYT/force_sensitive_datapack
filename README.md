@@ -35,6 +35,19 @@ An origin with **two distinct forms**.
     * Mainhand attacks have **extra knockback**.
     * Shoto saber attacks deal **extra damage**.
     * Every third attack swings the shoto saber.
+  
+
+  **Krell Style:** Requires a **Dual saber** in each hand
+
+
+  **Blaster Style:** Requires a **Single Saber** in mainhand and a **Blaster** in offhand
+
+  
+  **Ahsoka Style:** Requires a **Single Saber** in mainhand and a **Shoto Saber** in offhand
+
+
+  **Asajj Style:** Requires a **Single Saber** in mainhand and a **Single Saber** in offhand
+
 
 ---
 
