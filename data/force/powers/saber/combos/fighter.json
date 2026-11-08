@@ -1,19 +1,38 @@
 {
+    "name": "Fighting Stance",
+    "description": "Empty Mainhand, Shoto in Offhand",
+
     "type": "origins:multiple",
 
     "bar": {
         "type": "origins:resource",
         "min": 0,
-        "max": 2,
+        "max": 7,
         "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+            "bar_index": 4,
+            "icon_index": 1,
             "should_render": true,
+            "order": 3,
             "condition": {
-                "type": "apoli:equipped_item",
-                "equipment_slot": "offhand",
-                "item_condition": {
-                    "type": "apoli:custom_data",
-                    "nbt": "{on:1b}"
-                }
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'shoto'}"
+                        }
+                    },
+                    {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    }
+                ]
             }
         }
     },
@@ -25,7 +44,7 @@
             "equipment_slot": "offhand",
             "item_condition": {
                 "type": "apoli:custom_data",
-                "nbt": "{on:1b}"
+                "nbt": "{on:1b,saber_type:'shoto'}"
             }
         },
         "modifier": {
@@ -41,7 +60,7 @@
             "equipment_slot": "offhand",
             "item_condition": {
                 "type": "apoli:custom_data",
-                "nbt": "{on:1b}"
+                "nbt": "{on:1b,saber_type:'shoto'}"
             }
         },
         "bientity_condition": {
@@ -106,7 +125,7 @@
             "equipment_slot": "offhand",
             "item_condition": {
                 "type": "apoli:custom_data",
-                "nbt": "{on:1b}"
+                "nbt": "{on:1b,saber_type:'shoto'}"
             }
         },
         "bientity_condition": {
@@ -171,7 +190,7 @@
             "equipment_slot": "offhand",
             "item_condition": {
                 "type": "apoli:custom_data",
-                "nbt": "{on:1b}"
+                "nbt": "{on:1b,saber_type:'shoto'}"
             }
         },
         "bientity_condition": {
