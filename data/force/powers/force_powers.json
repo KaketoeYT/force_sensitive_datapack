@@ -1,219 +1,255 @@
 {
-  "type": "origins:multiple",
+    "type": "origins:multiple",
 
-  "slow":{
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:swing_hand",
-          "hand": "MAIN_HAND"
+    "slow": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @n[tag=target] minecraft:slowness 5 3 true"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @n[tag=target] force:slow_effects"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function force:sounds/sound_force_slow"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:arrow, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
+                }
+            ]
         },
-        {
-          "type": "origins:execute_command",
-          "command": "effect give @n[tag=target] minecraft:slowness 5 3 true"
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 300
+                }
+            ]
         },
-        {
-          "type": "origins:execute_command",
-          "command": "power grant @n[tag=target] force:slow_effects"
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
         },
-        {
-          "type": "origins:execute_command",
-          "command": "function force:sounds/sound_force_slow"
+        "key": {
+            "key": "key.hotbar.1",
+            "continuous": false
+        }
+    },
+
+    "push": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function force:sounds/sound_force_push"
+                },
+                {
+                    "type": "origins:selector_action",
+                    "selector": "@e[tag=target]",
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "z": 2
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
+                }
+            ]
         },
-        {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 300
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.2",
+            "continuous": false
+        }
+    },
+
+    "pull": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function force:sounds/sound_force_pull"
+                },
+                {
+                    "type": "origins:selector_action",
+                    "selector": "@e[tag=target]",
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "z": -2
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 300
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.3",
+            "continuous": false
+        }
+    },
+
+    "dash": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource change @s force:force_bar_bar -200"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function force:sounds/sound_force_dash"
+                },
+                {
+                    "set": false,
+                    "type": "origins:add_velocity",
+                    "space": "local_horizontal",
+                    "z": 1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 200
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.sprint",
+            "continuous": false
+        }
+    },
+
+    "slow_fall": {
+        "type": "origins:modify_falling",
+        "velocity": 0.01,
+        "take_fall_damage": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 5
+                }
+            ]
+        }
+    },
+    "slow_fall_drain": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
             "type": "origins:execute_command",
-            "command":"execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:arrow, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
+            "command": "resource change @s force:force_bar_bar -5"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "force:force_bar_bar",
+                    "comparison": ">",
+                    "compare_to": 5
+                }
+            ]
         }
-      ]
-    },
-
-    "condition": {
-        "type":"origins:and",
-		"conditions": 
-		[
-			{
-				"type": "origins:resource",
-				"resource": "force:force_bar_bar",
-				"comparison": ">",
-				"compare_to": 300
-			}
-		]
-    },
-
-    "cooldown": 20,
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.hotbar.1",
-      "continuous": false
     }
-  },
-
-  "push":{
-    "type": "origins:active_self",
-
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:swing_hand",
-          "hand": "MAIN_HAND"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function force:sounds/sound_force_push"
-        },
-        {
-          "type": "origins:selector_action",
-          "selector": "@e[tag=target]",
-          "bientity_action": {
-            "type": "origins:add_velocity",
-            "z": 2
-          }
-        },
-        {
-          "type": "origins:execute_command",
-          "command":"execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
-        }
-      ]
-
-    },
-
-    "condition": {
-      "type":"origins:and",
-      "conditions":
-      [
-        {
-          "type": "origins:resource",
-          "resource": "force:force_bar_bar",
-          "comparison": ">",
-          "compare_to": 300
-        }
-      ]
-    },
-
-
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.hotbar.2",
-      "continuous": false
-    }
-
-  },
-
-  "pull":{
-    "type": "origins:active_self",
-
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:swing_hand",
-          "hand": "MAIN_HAND"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function force:sounds/sound_force_pull"
-        },
-        {
-          "type": "origins:selector_action",
-          "selector": "@e[tag=target]",
-          "bientity_action": {
-          "type": "origins:add_velocity",
-          "z": -2
-          }
-        },
-        {
-            "type": "origins:execute_command",
-            "command":"execute as @a at @s positioned ^ ^ ^6 if entity @n[distance=..5, type=!minecraft:item_frame] run resource change @s force:force_bar_bar -300"
-        }
-      ]
-    
-    },
-
-    "condition": {
-        "type":"origins:and",
-		"conditions": 
-		[
-			{
-				"type": "origins:resource",
-				"resource": "force:force_bar_bar",
-				"comparison": ">",
-				"compare_to": 300
-			}
-		]
-    },
-
-    "cooldown": 1,
-      "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.hotbar.3",
-      "continuous": false
-    }
-
-  },
-
-  "dash":{
-    "type": "origins:active_self",
-
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command":"resource change @s force:force_bar_bar -200"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function force:sounds/sound_force_dash"
-        },
-        {
-          "set": false,
-          "type": "origins:add_velocity",
-          "space": "local_horizontal",
-          "z": 1
-        }
-      ]
-    
-    },
-
-    "condition": {
-    "type":"origins:and",
-      "conditions": 
-      [
-        {
-          "type": "origins:on_block",
-          "inverted": true
-        },
-        {
-          "type": "origins:fall_flying",
-          "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "force:force_bar_bar",
-          "comparison": ">",
-          "compare_to": 200
-        }
-      ]
-    },
-
-
-    "cooldown": 1,
-      "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.sprint",
-      "continuous": false
-    }
-  }
 }
