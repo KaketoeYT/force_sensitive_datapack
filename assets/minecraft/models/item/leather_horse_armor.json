@@ -9,7 +9,7 @@
       "predicate": {
         "custom_model_data": 1
       },
-      "model": "recolorable_single_off"
+      "model": "single_off"
     },
     {
       "predicate": {
@@ -22,7 +22,7 @@
       "predicate": {
         "custom_model_data": 101
       },
-      "model": "recolorable_dual_off"
+      "model": "dual_off"
     },
     {
       "predicate": {
@@ -35,7 +35,7 @@
       "predicate": {
         "custom_model_data": 201
       },
-      "model": "recolorable_shoto_off"
+      "model": "shoto_off"
     },
     {
       "predicate": {
