@@ -1,0 +1,2 @@
+$execute if items entity @s weapon.$(hand) *[minecraft:custom_data~{on:0b}] run return run item modify entity @s weapon.$(hand) force:saber/shoto/shoto_saber_on
+$execute if items entity @s weapon.$(hand) *[minecraft:custom_data~{on:1b}] run return run item modify entity @s weapon.$(hand) force:saber/shoto/shoto_saber_off
