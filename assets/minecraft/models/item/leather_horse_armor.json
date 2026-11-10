@@ -7,6 +7,19 @@
   "overrides": [
     {
       "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "recolorable_single_off"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "recolorable_single_on"
+    },
+
+    {
+      "predicate": {
         "custom_model_data": 101
       },
       "model": "recolorable_dual_off"
@@ -16,6 +29,19 @@
         "custom_model_data": 102
       },
       "model": "recolorable_dual_on"
+    },
+
+    {
+      "predicate": {
+        "custom_model_data": 201
+      },
+      "model": "recolorable_shoto_off"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 202
+      },
+      "model": "recolorable_shoto_on"
     }
   ]
 }
