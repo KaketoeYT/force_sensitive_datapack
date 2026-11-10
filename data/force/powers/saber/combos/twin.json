@@ -1,0 +1,331 @@
+{
+    "name": "Twin Stance",
+    "description": "Single Saber in Mainhand and Offhand",
+
+    "type": "origins:multiple",
+
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+            "bar_index": 4,
+            "icon_index": 1,
+            "should_render": true,
+            "order": 3,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    },
+                    {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+
+    "stance_buff": {
+        "type": "origins:modify_damage_dealt",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "apoli:custom_data",
+                        "nbt": "{on:1b,saber_type:'single'}"
+                    }
+                },
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "apoli:custom_data",
+                        "nbt": "{on:1b,saber_type:'single'}"
+                    }
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "add_base_early",
+            "amount": 2
+        }
+    },
+
+    "finisher_buff": {
+        "type": "origins:modify_damage_dealt",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "apoli:custom_data",
+                        "nbt": "{on:1b,saber_type:'single'}"
+                    }
+                },
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "apoli:custom_data",
+                        "nbt": "{on:1b,saber_type:'single'}"
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "force:saber/combos/twin_bar",
+                    "comparison": "==",
+                    "compare_to": 3
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "add_base_early",
+            "amount": 5
+        }
+    },
+
+    "fourth_attack": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b,saber_type:'single'}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "comparison": "==",
+                        "compare_to": 3
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 1,
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "force:saber/combos/twin_bar",
+                            "operation": "set",
+                            "change": 0
+                        }
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:add_velocity",
+                        "z": 0.25
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 3,
+                        "action": {
+                            "type": "origins:swing_hand",
+                            "hand": "OFF_HAND"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    "third_attack": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b,saber_type:'single'}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "force:saber/combos/twin_bar",
+                "operation": "set",
+                "change": 3
+            }
+        }
+    },
+
+    "second_attack": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b,saber_type:'single'}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 3,
+                        "action": {
+                            "type": "origins:swing_hand",
+                            "hand": "OFF_HAND"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    "first_attack": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b,saber_type:'single'}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "force:saber/combos/twin_bar",
+                "operation": "set",
+                "change": 1
+            }
+        }
+    }
+}
