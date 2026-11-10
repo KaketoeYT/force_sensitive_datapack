@@ -1,0 +1,21 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/leather_horse_armor",
+    "layer1": "item/leather_horse_armor_overlay"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 101
+      },
+      "model": "recolorable_dual_off"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 102
+      },
+      "model": "recolorable_dual_on"
+    }
+  ]
+}
