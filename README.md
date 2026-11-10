@@ -30,11 +30,28 @@ An origin with **two distinct forms**.
 
 ## Combat Styles
 
+  | Saber  | Damage | Attack speed | Stamina cost |
+  |--------|--------|--------------|--------------|
+  | Single | 8.5    | 1.5          | 200          |
+  | Double | 10.5   | 1.2          | 150          |
+  | Shoto  | 7.5    | 2.0          | 150          |
+
+  | Stance          | Hit 1 | Hit 2 | Hit 3 | Hit 4 |
+  |-----------------|-------|-------|-------|-------|
+  | Fighting Stance | 7     | 7     | 10.5  | -     |
+  | Twin Stance     | 10.5  | 10.5  | 10.5  | 15.5  |
+
 ### Saber Combinations
 * **Fighter Style:** Requires **mainhand empty** and **offhand holding a Shoto saber**.
     * Mainhand attacks have **extra knockback**.
     * Shoto saber attacks deal **extra damage**.
     * Every third attack swings the shoto saber.
+
+
+* **Twin Style:** Requires a **Single Saber** in mainhand and offhand.
+  * All attacks deal **extra damage**.
+  * Every fourth attack is a **finisher** with **extra damage** and **extra knockback**.
+  * Every second and fourth attack swings the offhand saber.
   
 
   **Krell Style:** Requires a **Dual saber** in each hand
@@ -44,10 +61,6 @@ An origin with **two distinct forms**.
 
   
   **Ahsoka Style:** Requires a **Single Saber** in mainhand and a **Shoto Saber** in offhand
-
-
-  **Asajj Style:** Requires a **Single Saber** in mainhand and a **Single Saber** in offhand
-
 
 ---
 
