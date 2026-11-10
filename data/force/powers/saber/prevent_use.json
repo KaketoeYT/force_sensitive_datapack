@@ -1,0 +1,9 @@
+{
+    "name": "",
+
+    "type": "apoli:prevent_item_use",
+    "item_condition": {
+        "type": "apoli:custom_data",
+        "nbt": "{weapon_type:'saber'}"
+    }
+}
