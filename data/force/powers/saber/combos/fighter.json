@@ -1,7 +1,9 @@
 {
     "name": "Fighting Stance",
     "description": "Empty Mainhand, Shoto in Offhand",
+
     "type": "origins:multiple",
+
     "bar": {
         "type": "origins:resource",
         "min": 0,
@@ -34,6 +36,7 @@
             }
         }
     },
+
     "fist_buff": {
         "type": "origins:modify_damage_dealt",
         "condition": {
@@ -61,6 +64,7 @@
             "amount": 6
         }
     },
+
     "first_attack": {
         "type": "origins:action_on_hit",
         "condition": {
@@ -187,13 +191,14 @@
                         "ticks": 5,
                         "action": {
                             "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'1.25',pitch:'0'}"
+                            "command": "function force:saber/combos/nudge {yaw:'2.5',pitch:'0'}"
                         }
                     }
                 }
             ]
         }
     },
+
     "second_attack": {
         "type": "origins:action_on_hit",
         "condition": {
@@ -320,13 +325,14 @@
                         "ticks": 5,
                         "action": {
                             "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-1.75',pitch:'0'}"
+                            "command": "function force:saber/combos/nudge {yaw:'-3.5',pitch:'0'}"
                         }
                     }
                 }
             ]
         }
     },
+
     "third_attack": {
         "type": "origins:action_on_hit",
         "condition": {
@@ -457,7 +463,7 @@
                         "ticks": 5,
                         "action": {
                             "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'2.5'}"
+                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'5'}"
                         }
                     }
                 }
