@@ -149,11 +149,8 @@
                     }
                 },
                 {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.25
-                    }
+                    "type": "origins:add_velocity",
+                    "z": 0.25
                 },
                 {
                     "type": "origins:actor_action",
@@ -177,62 +174,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/nudge {yaw:'0',pitch:'5'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 1,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'3.75'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 2,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'1.25'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 4,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'-1.25'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 5,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'-3.75'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 6,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0',pitch:'-5'}"
-                        }
+                        "command": "function force:saber/combos/nudge/start_swing {yaw:0,pitch:125}"
                     }
                 }
             ]
@@ -296,62 +238,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/nudge {yaw:'-3.5',pitch:'0'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 1,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 2,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 4,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 5,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 6,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'3.5',pitch:'0'}"
-                        }
+                        "command": "function force:saber/combos/nudge/start_swing {yaw:-88,pitch:0}"
                     }
                 }
             ]
@@ -426,62 +313,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/nudge {yaw:'3.5',pitch:'0'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 1,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 2,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 4,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 5,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 6,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-3.5',pitch:'0'}"
-                        }
+                        "command": "function force:saber/combos/nudge/start_swing {yaw:88,pitch:0}"
                     }
                 }
             ]
@@ -545,62 +377,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/nudge {yaw:'-3.5',pitch:'0'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 1,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 2,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 4,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'0.875',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 5,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'2.625',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 6,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'3.5',pitch:'0'}"
-                        }
+                        "command": "function force:saber/combos/nudge/start_swing {yaw:-88,pitch:0}"
                     }
                 }
             ]
