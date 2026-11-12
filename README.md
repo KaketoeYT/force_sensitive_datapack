@@ -52,9 +52,12 @@ An origin with **two distinct forms**.
   * All attacks deal **extra damage**.
   * Every fourth attack is a **finisher** with **extra damage** and **extra knockback**.
   * Every second and fourth attack swings the offhand saber.
-  
 
-  **Krell Style:** Requires a **Dual saber** in each hand
+
+* **Whirlwind Style:** Requires a **Dual saber** in each hand.
+  * All attacks deal **extra damage** and hit **everything around you**.
+  * Every attack **spins you around**, and later attacks **lift enemies** into the air.
+  * Every seventh attack is the **Tempest**: a double spin with three area hits.
 
 
   **Blaster Style:** Requires a **Single Saber** in mainhand and a **Blaster** in offhand

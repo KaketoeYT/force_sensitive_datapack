@@ -1,1 +1,0 @@
-execute as @a[tag=force_nudge] run function force:saber/combos/nudge/tick
