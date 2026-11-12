@@ -153,7 +153,94 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/twin/fx_slash {pitch:'1.0'}"
+                        "command": "function force:saber/fx/fx_combo {pitch:'1'}"
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function force:saber/fx/fx_slash {pitch: 1}"
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 4,
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function force:saber/fx/fx_slash {pitch: 1}"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 4,
+                        "action": {
+                            "type": "origins:swing_hand",
+                            "hand": "OFF_HAND"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    "second_attack": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "apoli:custom_data",
+                "nbt": "{on:1b,saber_type:'single'}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:custom_data",
+                            "nbt": "{on:1b,saber_type:'single'}"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "force:saber/combos/twin_bar",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function force:saber/combos/twin/fx_slash {pitch:'1.15'}"
                     }
                 },
                 {
@@ -222,7 +309,7 @@
         }
     },
 
-    "second_attack": {
+    "third_attack": {
         "type": "origins:action_on_hit",
         "condition": {
             "type": "apoli:equipped_item",
@@ -241,7 +328,7 @@
                         "type": "origins:resource",
                         "resource": "force:saber/combos/twin_bar",
                         "comparison": "==",
-                        "compare_to": 1
+                        "compare_to": 2
                     }
                 },
                 {
@@ -266,7 +353,7 @@
                         "type": "origins:change_resource",
                         "resource": "force:saber/combos/twin_bar",
                         "operation": "set",
-                        "change": 2
+                        "change": 3
                     }
                 },
                 {
@@ -284,7 +371,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/twin/fx_slash {pitch:'1.15'}"
+                        "command": "function force:saber/combos/twin/fx_slash {pitch:'1.3'}"
                     }
                 },
                 {
@@ -346,126 +433,6 @@
                         "action": {
                             "type": "origins:execute_command",
                             "command": "function force:saber/combos/nudge {yaw:'-4',pitch:'0'}"
-                        }
-                    }
-                }
-            ]
-        }
-    },
-
-    "third_attack": {
-        "type": "origins:action_on_hit",
-        "condition": {
-            "type": "apoli:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "apoli:custom_data",
-                "nbt": "{on:1b,saber_type:'single'}"
-            }
-        },
-        "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "force:saber/combos/twin_bar",
-                        "comparison": "==",
-                        "compare_to": 2
-                    }
-                },
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "apoli:custom_data",
-                            "nbt": "{on:1b,saber_type:'single'}"
-                        }
-                    }
-                }
-            ]
-        },
-        "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "force:saber/combos/twin_bar",
-                        "operation": "set",
-                        "change": 3
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function force:saber/combos/twin/fx_slash {pitch:'1.3'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function force:saber/combos/nudge {yaw:'-3',pitch:'0'}"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 1,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-2',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 2,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'-1',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 4,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'1',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 5,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'2',pitch:'0'}"
-                        }
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:delay",
-                        "ticks": 6,
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function force:saber/combos/nudge {yaw:'4',pitch:'0'}"
                         }
                     }
                 }
@@ -535,10 +502,43 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:delay",
-                        "ticks": 3,
+                        "ticks": 4,
                         "action": {
                             "type": "origins:swing_hand",
                             "hand": "OFF_HAND"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 4,
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function force:saber/fx/fx_slash {pitch: 1}"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 8,
+                        "action": {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:delay",
+                        "ticks": 8,
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function force:saber/fx/fx_slash {pitch: 1}"
                         }
                     }
                 },
