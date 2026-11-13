@@ -1,0 +1,31 @@
+{
+    "type": "origins:action_on_hit",
+    "condition": {
+        "type": "apoli:and",
+        "conditions": [
+            {
+                "type": "apoli:power_active",
+                "power": "force:saber/combos/fighter_validate",
+                "inverted": true
+            },
+            {
+                "type": "apoli:power_active",
+                "power": "force:saber/combos/twin_validate",
+                "inverted": true
+            },
+            {
+                "type": "apoli:power_active",
+                "power": "force:saber/combos/whirlwind_validate",
+                "inverted": true
+            }
+        ]
+    },
+    "bientity_action": {
+        "type": "origins:actor_action",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "function force:saber/fx/fx_slash {pitch:'1'}"
+        }
+    }
+}
+
