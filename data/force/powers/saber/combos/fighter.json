@@ -4,41 +4,8 @@
 
     "type": "origins:multiple",
 
-    "bar": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 7,
-        "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
-            "bar_index": 4,
-            "icon_index": 1,
-            "should_render": true,
-            "order": 3,
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "apoli:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "apoli:custom_data",
-                            "nbt": "{on:1b,saber_type:'shoto'}"
-                        }
-                    },
-                    {
-                        "type": "apoli:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:empty"
-                        }
-                    }
-                ]
-            }
-        }
-    },
-
-    "fist_buff": {
-        "type": "origins:modify_damage_dealt",
+    "validate": {
+        "type": "origins:simple",
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -58,6 +25,88 @@
                     }
                 }
             ]
+        }
+    },
+
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+            "bar_index": 4,
+            "icon_index": 1,
+            "should_render": true,
+            "order": 3,
+            "condition": {
+                "type": "apoli:power_active",
+                "power": "force:saber/combos/fighter_validate"
+            }
+        }
+    },
+
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 0,
+        "min_action": {
+            "type": "origins:change_resource",
+            "resource": "force:saber/combos/fighter_bar",
+            "operation": "set",
+            "change": 0
+        }
+    },
+
+    "combo_timeout": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "force:saber/combos/fighter_bar",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "force:saber/combos/fighter_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "force:saber/combos/fighter_timer",
+            "change": -1
+        }
+    },
+
+    "combo_refresh": {
+        "type": "origins:action_on_hit",
+        "condition": {
+            "type": "apoli:power_active",
+            "power": "force:saber/combos/fighter_validate"
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "force:saber/combos/fighter_timer",
+                "operation": "set",
+                "change": 200
+            }
+        }
+    },
+
+    "fist_buff": {
+        "type": "origins:modify_damage_dealt",
+        "condition": {
+            "type": "apoli:power_active",
+            "power": "force:saber/combos/fighter_validate"
         },
         "modifier": {
             "operation": "add_base_early",
@@ -68,36 +117,17 @@
     "first_attack": {
         "type": "origins:action_on_hit",
         "condition": {
-            "type": "apoli:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "apoli:custom_data",
-                "nbt": "{on:1b,saber_type:'shoto'}"
-            }
+            "type": "apoli:power_active",
+            "power": "force:saber/combos/fighter_validate"
         },
         "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "force:saber/combos/fighter_bar",
-                        "comparison": "==",
-                        "compare_to": 0
-                    }
-                },
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:empty"
-                        }
-                    }
-                }
-            ]
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "force:saber/combos/fighter_bar",
+                "comparison": "==",
+                "compare_to": 0
+            }
         },
         "bientity_action": {
             "type": "origins:and",
@@ -202,36 +232,17 @@
     "second_attack": {
         "type": "origins:action_on_hit",
         "condition": {
-            "type": "apoli:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "apoli:custom_data",
-                "nbt": "{on:1b,saber_type:'shoto'}"
-            }
+            "type": "apoli:power_active",
+            "power": "force:saber/combos/fighter_validate"
         },
         "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "force:saber/combos/fighter_bar",
-                        "comparison": "==",
-                        "compare_to": 1
-                    }
-                },
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:empty"
-                        }
-                    }
-                }
-            ]
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "force:saber/combos/fighter_bar",
+                "comparison": "==",
+                "compare_to": 1
+            }
         },
         "bientity_action": {
             "type": "origins:and",
@@ -264,7 +275,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "function force:saber/combos/fighter/fx_hook"
+                        "command": "function force:saber/fx/fx_slash {pitch: 1}"
                     }
                 },
                 {
@@ -336,36 +347,17 @@
     "third_attack": {
         "type": "origins:action_on_hit",
         "condition": {
-            "type": "apoli:equipped_item",
-            "equipment_slot": "offhand",
-            "item_condition": {
-                "type": "apoli:custom_data",
-                "nbt": "{on:1b,saber_type:'shoto'}"
-            }
+            "type": "apoli:power_active",
+            "power": "force:saber/combos/fighter_validate"
         },
         "bientity_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "force:saber/combos/fighter_bar",
-                        "comparison": "==",
-                        "compare_to": 2
-                    }
-                },
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:empty"
-                        }
-                    }
-                }
-            ]
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "force:saber/combos/fighter_bar",
+                "comparison": "==",
+                "compare_to": 2
+            }
         },
         "bientity_action": {
             "type": "origins:and",
