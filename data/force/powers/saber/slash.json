@@ -20,6 +20,11 @@
             }
         ]
     },
+    "damage_condition": {
+        "type": "apoli:amount",
+        "comparison": ">=",
+        "compare_to": 5
+    },
     "bientity_action": {
         "type": "origins:actor_action",
         "action": {
@@ -28,4 +33,3 @@
         }
     }
 }
-
