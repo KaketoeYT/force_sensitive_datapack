@@ -1,0 +1,1 @@
+playsound minecraft:entity.wind_charge.wind_burst player @a ~ ~ ~ 0.25 0.3

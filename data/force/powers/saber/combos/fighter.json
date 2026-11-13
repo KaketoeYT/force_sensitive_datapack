@@ -48,13 +48,22 @@
     "timer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 200,
+        "max": 100,
         "start_value": 0,
         "min_action": {
-            "type": "origins:change_resource",
-            "resource": "force:saber/combos/fighter_bar",
-            "operation": "set",
-            "change": 0
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "force:saber/combos/fighter_bar",
+                    "operation": "set",
+                    "change": 0
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function force:saber/combos/fx/fx_winddown"
+                }
+            ]
         }
     },
 
